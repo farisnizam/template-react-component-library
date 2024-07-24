@@ -1,0 +1,239 @@
+/* --------------------------------------------------------
+Fonts of Dot
+author: pedro, emanuel
+email: pedro@dot.vu, emanuel@dot.vu
+website: http://dot.vu
+----------------------------------------------------------*/
+
+/**
+ * REQUIRES
+ ************************/
+@import "constants";
+
+// aux mixins
+.fontSizeMixin(@size){
+  font-size: unit(@size, px);
+  font-size: unit(@size/10, rem);
+}
+
+// font 1
+.font1Size(@size: @defaultFontSize) {
+  @fontSize: 14;
+  @inc: 4;
+  @XXS: @fontSize - @inc - @inc/2;
+  @XS: @fontSize - @inc;
+  @S: @fontSize - @inc/2;
+  @SM: @fontSize - 1;
+  @M: @fontSize;
+  @ML: @fontSize + @inc/2;
+  @L: @fontSize + @inc;
+  @LL: @fontSize + @inc;
+  @MLL: @fontSize + @inc + @inc/2;
+  @XL: @fontSize + @inc*2;
+  @XLL: @fontSize + @inc*2 + @inc/2;
+  @XXL: @fontSize + @inc*3;
+  @XXXL: @fontSize + @inc*4;
+  @4XL: @fontSize + @inc*6;
+  @5XL: @fontSize + @inc*8;
+  @h1: 50;
+  @h1Tablet: 38;
+  @h1Mobile: 30;
+  @h2: 49;
+  @h2Tablet: 36;
+  @h2Mobile: 28;
+  @h3: 32;
+  @h3Tablet: 26;
+  @h3Mobile: 18;
+  @text: 20;
+  @textTablet: 18;
+  @textMobile: 16;
+  @ULTRA: @fontSize + @inc*20;
+  @HEADLINE: @fontSize + @inc*6 + 2;
+  @HEADLINE2: @fontSize + @inc*9;
+  .fontSizeMixin(@@size);
+}
+
+.font1Weight(@weight: @defaultFontWeight) {
+  @light: 300;
+  @normal: 400;
+  @bold: 700;
+  font-weight: @@weight;
+}
+
+.font1(@size: @defaultFontSize, @weight: @defaultFontWeight) {
+  .font1Size(@size);
+  .font1Weight(@weight);
+  font-family: @font1;
+}
+
+
+
+// font 2 (Arial)
+.font2Size(@size: @defaultFontSize) {
+  @fontSize: 18;
+  @inc: 4;
+  @XXS: @fontSize - @inc - @inc/2;
+  @XS: @fontSize - @inc;
+  @S: @fontSize - @inc/2;
+  @M: @fontSize;
+  @L: @fontSize + @inc;
+  @LL: @fontSize + @inc;
+  @XL: @fontSize + @inc*2;
+  @XXL: @fontSize + @inc*3;
+  @XXXL: @fontSize + @inc*4;
+  @4XL: @fontSize + @inc*6;
+  @5XL: @fontSize + @inc*8;
+  @ULTRA: @fontSize + @inc*20;
+  @HEADLINE: @fontSize + @inc*3;
+
+  // The line-height is not being set on live pages, so what would apper on the
+  // editor, would be different on live. So to be similar, the line-height rule
+  // was removed.
+  // line-height: (@@size + @@size*@goldegnRatio) * 1px;
+
+  .fontSizeMixin(@@size);
+}
+
+.font2Weight(@weight: @defaultFontWeight) {
+  @light: 300;
+  @normal: 400;
+  @large: 500;
+  @bolder: 700;
+  font-weight: @@weight;
+}
+
+.font2(@size: @defaultFontSize, @weight: @defaultFontWeight) {
+  .font2Size(@size);
+  .font2Weight(@weight);
+  font-family: @font2;
+}
+
+.font3Family() {
+  font-family: @font3;
+}
+
+// font 3 Poppins
+.font3Size(@size: @defaultFontSize) {
+  @atomicH1: 30;
+  @atomicH2: 22;
+  @atomicH3: 23;
+  @atomicH4: 20;
+  @atomicH5: 18;
+  @atomicH6: 16;
+  @atomicBody: 16;
+  @atomicBodySmall: 14;
+
+  @XL: 30;
+  @L: 24;
+  @M: 18;
+  @paragraph: 18;
+  @h2: 22;
+  @h1: 30;
+  @big-h1: 50;
+  @S: 14; 
+  @XS: 12; 
+  @XXS: 11;
+
+  @marketplace-category-title: 16;
+  @marketplace-collection-title: 16;
+  @marketplace-search-input-text: 14;
+
+  @marketplaceManagerTitle: 16;
+  @marketplaceManagerListItem: 14;
+  
+  @form: 16;
+  @form-title: 38;
+  @form-title-description: 18;
+  @form-small: 14;
+  @form-checkbox-mark: 11;
+  @form-disclaimer: 12;
+
+  @button-link: 18;
+  @button-action: 18;
+  @button-action-small: 14;
+  
+  @top-bar-item: 18;
+  @top-bar-item-small: 16;
+  
+  @footer-copyright: 13;
+  @footer-item: 18;
+  @footer-h2: 18;
+  @footer-h2-focus: 28;
+  
+  @site-menu-item-mobile: 25;
+  @site-menu-item-mobile-small: 18;
+
+  @section-column-list-header: 22;
+
+  @template-custom-project-title: 36;
+  @template-item-title: 18;
+  @template-item-subtitle: 12;
+
+  @template-difficulty: 14;
+  @template-title: 42;
+  @template-pre-title: 20;
+
+  @template-title-mobile: 36;
+  @template-pre-title-mobile: 16;
+
+  @template-price-header: 20;
+  
+  @template-price-one-time-price: 40;
+  @template-price-one-time-visitors-number: 26;
+  @template-price-one-time-visitors-text: 18;
+
+  @template-price-subscription-price: 30;
+  @template-price-subscription-visitors-number: 14;
+  @template-price-subscription-visitors-text: 12;
+  @template-price-subscription-unlimited-templates: 10;
+  
+  @template-share-text: 26;
+
+  @subscriptions-subscription-title: 30;
+  @subscriptions-subscription-price: 50;
+  @subscriptions-subscription-price-period: 20;
+  @subscriptions-subscription-limits-number: 20;
+  @subscriptions-subscription-limits-text: 20;
+  @subscriptions-subscription-includes: 20;
+
+  @password-strength: 11;
+
+  @modal-text: 22; // same as h2
+  @modal-error: 16;
+
+  @table-header: 20;
+  @table-cell: 16;
+
+  @pricing-name: 20; // and normal
+  @pricing-price: 40; // extrabold
+  @pricing-price-text: 26; // bold
+  @pricing-paragraph: 16; // light
+  @pricing-templates: 16; // bold
+  @pricing-all-features: 16; // bold
+  @pricing-features: 20; // light
+
+  .fontSizeMixin(@@size);
+}
+
+.font3Weight(@weight: @defaultFontWeight) {
+  @light: 300;
+  @normal: 400;
+  @medium: 500;
+  @semibold: 600;
+  @bold: 700;
+  @extrabold: 800;
+  font-weight: @@weight;
+}
+
+.font3(@size: @defaultFontSize, @weight: @defaultFontWeight) {
+  .font3Size(@size);
+  .font3Weight(@weight);
+  .font3Family();
+}
+
+.atomFont(@size: 16, @weight: @defaultFontWeight) {
+  .fontSizeMixin(@size);
+  .font3Weight(@weight);
+  .font3Family();
+}
+

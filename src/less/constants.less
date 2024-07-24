@@ -1,0 +1,443 @@
+/**
+ *
+ */
+
+// COLORS
+
+// new colors 2021
+@dotColorOrange: #f57b37;
+@dotColorWhite: #ffffff;
+@dotColorOffWhite: #f2f2f2;
+@dotColorGray: #e2e2e2;
+@dotColorUIGray: #393939;
+@dotColorUIGrayLighter: #595959;
+@dotColorBlack: #0d0d0d;
+
+
+//@a:     #F57B37; // dot orange
+// @a: #fe780b; // dot orange
+// @aa: #f57b37; // new dot orange :D
+// @dotOrange: @a;
+@a:@dotColorOrange;
+@aa:@dotColorOrange;
+@dotOrange:@dotColorOrange;
+@aFadedOverC: #FABD9B; // dot orange with 50% transparency over @c
+@al: lighten(@a, 10%);
+@all: lighten(@a, 20%);
+@alll: lighten(@a, 30%);
+@allll: lighten(@a, 40%);
+@ad: darken(@a, 10%);
+@add: darken(@a, 20%);
+@addd: darken(@a, 30%);
+@adddd: darken(@a, 40%);
+
+@dotColorInputIcon: #999999;
+
+@dotColorInputPlaceholderStatic: #999999;
+@dotColorInputPlaceholderHover: #999999;
+@dotColorInputPlaceholderActive: #999999;
+@dotColorInputPlaceholderDisabled: #f2f2f2;
+
+@dotColorInputTextStatic: #333333;
+@dotColorInputTextHover: #333333;
+@dotColorInputTextActive: #333333;
+@dotColorInputTextDisabled: #999999;
+
+@dotColorInputStrokeStatic: #999999;
+@dotColorInputStrokeHover: @dotColorOrange;
+@dotColorInputStrokeActive: #999999;
+@dotColorInputStrokeDisabled: #f2f2f2;
+@dotColorInputStrokeError: @dotColorError;
+
+@dotColorInputCaretColor: @dotColorOrange;
+
+@dotColorInputButtonColor: #999999;
+
+@dotColorErrorBackground: #FCE6E6;
+@dotColorError: #e30505;
+@dotColorWarningBackground: #FDF6E7;
+@dotColorWarning: #EFAD12;
+@dotColorInformationBackground: #F1F6FE;
+@dotColorInformation: #76A9FA;
+@dotColorSuccessBackground: #EAF9F3;
+@dotColorSuccess: #31C58D;
+@dotColorSavedBackground: #F4F4FE;
+@dotColorSaved: #9693FA;
+
+@dotColorTextPrimaryButtonStatic: @dotColorOrange;
+@dotColorTextPrimaryButtonHover: @dotColorWhite;
+@dotColorTextPrimaryButtonActive: @dotColorWhite;
+@dotColorTextPrimaryButtonDisabled: #f2f2f2;
+
+@dotColorStrokePrimaryButtonStatic: @dotColorOrange;
+@dotColorStrokePrimaryButtonHover: #f7955e;
+@dotColorStrokePrimaryButtonActive: @dotColorOrange;
+@dotColorStrokePrimaryButtonDisabled: #cccccc;
+
+@dotColorBackgroundPrimaryButtonStatic: transparent;
+@dotColorBackgroundPrimaryButtonHover: #f7955e;
+@dotColorBackgroundPrimaryButtonActive: @dotColorOrange;
+@dotColorBackgroundPrimaryButtonDisabled: #cccccc;
+
+@dotColorTextPrimaryButtonContrastStatic: #f2f2f2;
+@dotColorTextPrimaryButtonContrastHover: #333333;
+@dotColorTextPrimaryButtonContrastActive: #333333;
+@dotColorTextPrimaryButtonContrastDisabled: #f2f2f2;
+
+@dotColorStrokePrimaryButtonContrastStatic: #f2f2f2;
+@dotColorStrokePrimaryButtonContrastHover: #f2f2f2;
+@dotColorStrokePrimaryButtonContrastActive: #f2f2f2;
+@dotColorStrokePrimaryButtonContrastDisabled: #f2f2f2;
+
+@dotColorBackgroundPrimaryButtonContrastStatic: transparent;
+@dotColorBackgroundPrimaryButtonContrastHover: #f2f2f2;
+@dotColorBackgroundPrimaryButtonContrastActive: #fff;
+@dotColorBackgroundPrimaryButtonContrastDisabled: #f2f2f2;
+
+@dotColorMessageText: #A9A9A9;
+
+
+/**
+ * Oranges and Grays - main colors (dashboard)
+ */
+@dotColorDotvuOrange: #f57b37;
+@dotColorTintOrange: #f7955e;
+@dotColorLightOrange: #fde4d7;
+@dotColorBackground: #ffffff;
+// as of 20230530, by Kinga, was #f2f2f2 before
+@dotColorHoverMenu: #f7f7f7;
+@dotColorGrayBackground: #f2f2f2;
+@dotColorBackgroundHighlight: #f2f2f2;
+@dotColorDividerGray: #cccccc;
+@dotColorBorderGray: #e6e6e6;
+@dotColorStrongGray: #999999;
+@dotColorStandardGray: #333333;
+@dotColorMajorBlack: #0d0d0d;
+
+/**
+ * Extended Editor colors
+ */
+@dotColorPlatformBarButtonBackground: #575757;
+@dotColorPlatformToolbarBackground: #262626;
+
+@dotColorText: @dotColorMajorBlack;
+@dotColorTextLight: #999999;
+@dotColorTextSecondary: #333333;
+@dotColorTextSecondaryHover: #f7955e;
+@dotColorTextSecondaryActive: @dotColorOrange;
+@dotColorTextSecondaryDisabled: #cccccc;
+@dotColorTextFaded: #b5b5b5;
+@dotColorTextOrange: @dotColorOrange;
+@dotColorTextPlaceholder: #595959;
+@dotColorTextContrast: @dotColorWhite;
+@dotColorTextContrastOnContrast: @dotColorOrange;
+
+@dotColorBackgroundLight: @dotColorWhite;
+@dotColorBackgroundGrey: @dotColorOffWhite;
+@dotColorBackgroundGrey2: @dotColorGray;
+@dotColorBackgroundMarketplace: @dotColorBackgroundGrey;
+@dotColorBackgroundContrast: @dotColorBlack;
+@dotColorBackgroundOrangeEmphasis: #fde4d7; // Avatar
+
+@dotColorButtonBackgroundContrast: @dotColorUIGray;
+@dotColorButtonBackgroundContrastLighter: @dotColorUIGrayLighter;
+@dotColorButtonBackgroundContrastOnContrast: @dotColorWhite;
+
+@dotColorBackgroundDark: #333333;
+
+@dotColorOrangeLogo: @dotColorOrange;
+
+@dotColorSeparatorGray: #cccccc;
+
+@dotColorDotvuOrangeEscaped: escape(@dotColorDotvuOrange);
+
+@dotColorPopupBorderGray: @dotColorBorderGray;
+
+@dotShadowLarge: 5px 8.66px 10px 5px rgba(0, 0, 0, 0.1);
+@dotShadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.1);
+@dotSvgShadowLarge: 2px 3px 4px rgba(0, 0, 0, 0.4);
+
+@dotBaseHeight: 50px;
+@dotBaseHeightGoldenBig: @dotBaseHeight * .62;
+@dotBaseHeightGoldenHalfBig: @dotBaseHeightGoldenBig / 2;
+@dotBaseHeightGoldenSmall: @dotBaseHeight * .38;
+@dotBaseHeightGoldenHalfSmall: @dotBaseHeightGoldenSmall / 2;
+
+@dotInputHeight: 38px;
+@dotInputSpace: @dotInputHeight/2;
+@dotInputSpaceSmall: @dotInputSpace * .75;
+
+@dotBaseRadius: @dotBaseHeight / 2; // since we want full radius, this guarantees it
+
+@d: #0098b1; // complementary blue to @a
+@dotBlue: @d;
+
+@b: rgb(191, 191, 191); // dot gray
+@bl: lighten(@b, 10%);
+@bll: lighten(@b, 20%);
+@blll: lighten(@b, 30%);
+@bllll: rgb(250, 250, 250);
+@bd: darken(@b, 10%);
+@bdd: darken(@b, 20%);
+@bddd: darken(@b, 30%);
+@bdddd: darken(@b, 40%);
+@bddddd: darken(@b, 60%);
+@bb: #393939;
+@bvd: darken(@b, 80%);
+
+@topBarBackground: #0f0f0f;
+@editorBarBackground: #262626;
+@editorSettingGrayBackground: #202020;
+
+@c: rgb(250, 250, 250); // white
+@cl: lighten(@c, 10%);
+@cll: lighten(@c, 20%);
+@clll: lighten(@c, 30%);
+@cllll: lighten(@c, 40%);
+@cd: darken(@c, 10%);
+@cdd: darken(@c, 20%);
+@cddd: darken(@c, 30%);
+@cdddd: darken(@c, 40%);
+@cc: white;
+
+@u: #0098b1; // dot blue
+@dotGreen: #519d85; // dot green
+
+@cyan: rgb(147, 205, 221);
+
+@componentColor: @dotOrange;
+@addonColor: @dotBlue;
+@dataColor: @dotGreen;
+
+@canvasBackgroundPattern: url('https://4500902784af655b3de3-5ad26d8a78e52ca19e00dd2d340c77bb.ssl.cf3.rackcdn.com/dot/images/editor/canvas.jpg');
+@canvasBackgroundColorLight: #fff;
+@canvasBackgroundColorDark: #262626;
+@isTemplateColor: #088bf3;
+
+@darkBackgroundOverlay: rgba(0, 0, 0, .3);
+
+@colorDownload: #0099B2;
+@colorValid: #33F237;
+@colorInvalid: #F83410;
+@colorWarning: #D14024;
+@colorInfo: #088bf3;
+@colorWarningLight: #EBA811;
+@colorConfirm: #178458;
+@colorSecure: #188038;
+@colorDarkBlack: #262626;
+
+@facebookColor: #3b5999;
+@googleColor: #dd4b38;
+@linkedinColor: #55acee;
+@twitterColor: #4099FF;
+@noteColor: #fdfdc8;
+
+// used on reset (see mixins)
+@reset1: rgb(190,190,190);
+
+@mobileBreakpoint: 380px;
+
+@scrollBarWidth: 6px;
+@scrollBarWidthThicker: 15px;
+
+// General design values
+@defaultBorderRadius: 2px;
+
+@inputHorizontalPadding: 10px;
+@inputVerticalPadding: 7px;
+@inputBaseFontHeight: 21px;
+@approximateInputHeight: @inputVerticalPadding * 2 + @inputBaseFontHeight;
+
+// GENERAL SPACING
+@dashboardNavigationHorizontalSpacing: 30px;
+
+// SELECTORS
+
+// container selectors
+@inline: ~":nth-child(1)";
+@inlineUnsafe: ~".inline";
+@flying: ~":nth-child(2)";
+
+// FONTS
+@font1: 'Open Sans', sans-serif;
+@font2: Arial, 'Helvetica Neue', Helvetica, sans-serif; // used in the editor defautls
+@font3: 'Poppins', 'Open Sans', sans-serif; // new font
+
+// font general values
+@defaultFontSize: 'M';
+@defaultFontWeight: 'normal';
+
+// Easing
+@easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+
+// DOT-BAR
+@dotBarHeight: 50px;
+@dotPlatformBarHeight: 60px;
+@dotPlatformBarButtonHeight: 37px; // @dotPlatformBarHeight * 0.62
+@dotSiteBarCollapsedHeight: 80px;
+@dotSiteBarCollapsedHeightMobile: 60px;
+@dotBarButtonHeight: 35px;
+@dotBarBreakPoint: 1366px;
+@controlBarTabHeight: 40px;
+@controlBarHeight: 40px;
+
+// DOT-TIPS
+@dotTipsControlsWidth: 100px;
+
+// DOT SIDEBAR
+@avatarSize: 57px;
+@sidebarOptionsMargin: @baseMargin;
+@sidebarOptionsContainerSize: 25px;
+@sidebarButtonSize: 80px;
+
+// BASE PADDING
+@basePadding: 20px;
+@halfBasePadding: ceil(@basePadding / 2);
+@quarterBasePadding: ceil(@basePadding / 4);
+@threeQuartersBasePadding: ceil((@basePadding * 3) / 4);
+@mobilePadding: @halfBasePadding;
+@largePadding: ceil(@basePadding * 1.5);
+@xlargePadding: ceil(@basePadding * 2);
+@xxlargePadding: ceil(@basePadding * 3);
+
+// BASE MARGIN
+@baseMargin: 10px;
+@halfBaseMargin: ceil(@baseMargin / 2);
+@smallMargin: ceil(@baseMargin / 2);
+@mobileMargin: @smallMargin;
+@largeMargin: ceil(@baseMargin * 1.5);
+@xlargeMargin: ceil(@baseMargin * 2);
+@xxlargeMargin: ceil(@baseMargin * 3);
+
+// DOT EDITOR CANVAS
+@dotEditorCanvasPadding: 40px;
+
+// DOT-TOOLBAR
+@dotEditorToolbarHeight: 50px;
+
+// DOT-EDITOR-BAR
+@dotEditorBarHeight: 50px;
+
+// DOT-EDITOR-SIDEBAR
+@dotEditorSidebarWidth: @sidebarButtonSize;
+
+// DOT-SIDEBAR
+@dotSidebarWidth: 280px;
+
+// APP PAGE
+@appPageTablet: 900px;
+@appPageMobile: 660px;
+@appPageRightPadding: 300px + (@basePadding * 3);
+
+// BUTTONS
+@dotButPadVerticalTight: 3px;
+@dotButPadHorizontalTight: 8px;
+@dotButPadVertical: 7px;
+@dotButPadHorizontal: 14px;
+@dotButPadVerticalLarge: 10px;
+@dotButPadHorizontalLarge: 20px;
+
+// DOT BUTTON BAR
+@dotButBarPadVertical: 0;
+@dotButBarPadHorizontal: 10px;
+
+// DOT BUTTON SALES
+@dotButSalesPadVertical: 10px;
+@dotButSalesPadHorizontal: 10px;
+
+@dotButSalesWidth: 240px;
+@dotButSalesHeight: 70px;
+
+// DOT HOME VALUES
+@dotHomeValueWidth: 220px;
+@dotHomeValueWidthWoPad: @dotHomeValueWidth - @basePadding*2;
+
+// DOT OVERLAY
+@dotOverlayBackgroundColor: @bddddd;
+@dotOverlayEntryHeight: 35px;
+@dotOverlayEntryPad: 10px;
+
+// TRANSITIONS
+@defaultDelay: 0.2s;
+
+// COMPONENT MENU
+@dotCompMenuMargin: 5px;
+@dotCompMenuPadding: 0 8px;
+@dotCompMenuOptWidth: 32px;
+@dotCompMenuOptHeight: 32px;
+//@dotCompMenuContainerWidth: 278px;
+@dotCompMenuContainerWidth: 320px;
+
+// DOT STORE
+@dotStoreContainerPadding: 20px;
+@dotStoreContainerPaddingSmaller: @dotStoreContainerPadding / 2;
+@dotStoreContainerPaddingSmallest: @dotStoreContainerPadding / 4;
+@dotStoreMenuWidth: 290px;
+@dotStoreCategoriesMargin: 3px;
+
+@dotStoreBreakpointSmall: 1300px;
+@dotStoreBreakpointSmaller: 975px;
+@dotStoreBreakpointSmallest: 700px;
+@dotStoreBreakpointMobile: 480px;
+
+@dotStoreExampleSize: 380px;
+
+@dotStoreBreakpointSmall_pageSpecial: 1250px;
+
+// DOT APP PREVIEW
+@dotAppPreviewBaseHeight: 177px;
+@dotAppPreviewGoldenHeight: ceil(169px * @goldenRatio);
+@dotAppPreviewBaseWidth: 200px;
+@dotAppPreviewSmallHeight: 161px;
+@dotAppPreviewSmallWidth: 178px;
+@dotAppPreviewSmallGoldenHeight: ceil(@dotAppPreviewSmallHeight * @goldenRatio);
+@dotAppBarHeight: 41px;
+
+// DOT PAGE PREVIEW
+@dotPagePreviewBaseWidth: 440px;
+@dotPagePreviewSmallWidth: 418px;
+@dotPagePreviewBaseHeight: 262px;
+@dotPagePreviewSmallHeight: ceil(@dotPagePreviewSmallWidth * @goldenRatio);
+
+// GOLDEN RATIO
+@goldenRatio: 0.61803398875;
+@gold: 61.8%;
+
+// OVERLAY
+@overlayContainerHeight: 600px;
+@overlayContainerMaxWidth: 800px;
+@overlayContainerBreakpoint: 560px;
+
+@overlayContainerHeightLarger: 550px;
+@overlayContainerMaxWidthLarger: 900px;
+@overlayContainerBreakpointLarger: 700px;
+
+// DASHBOARD
+@dashboardSmall: 1260px;
+
+// Vimeo
+@vimeoControlBackground: rgba(23, 35, 34, 0.74902);
+
+// CORNER OVERLAYS
+@dotCornerOverlayBoxShadow: 0 8px 8px -6px rgba(0, 0, 0, .5), 0 0 4px 0 rgba(89, 89, 89, .5);
+
+// Utils
+@tinyLineSvg: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAgMTAiPjxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjIiIHkyPSIwIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZT0iYmxhY2siLz48L3N2Zz4=";
+
+// SITE
+// -- pricing
+@pricingMobile: 1240px;
+@pricingTopMobile2: 990px;
+@pricingTableMobile: 1110px;
+@pricingSplitLinesColor: @b;
+
+// Screen sizes
+@mo_s: 320px;
+@mo_m: 375px;
+@mo_l: 425px;
+@tablet: 1024px;
+@tablet_: 1280px;
+@tablet_portrait: 768px;
+@tablet_portrait_l: 800px;
+@laptop: 1200px;
+@laptop_l: 1600px;
