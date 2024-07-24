@@ -5,7 +5,7 @@
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest",
-    "storybook": "storybook dev -p 6006",
+    "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "author": "Dot.vu",
@@ -27,6 +27,7 @@
     "@storybook/addon-webpack5-compiler-swc": "^1.0.4",
     "@storybook/blocks": "^8.2.5",
     "@storybook/react": "^8.2.5",
+    "@storybook/react-vite": "^8.2.5",
     "@storybook/react-webpack5": "^8.2.5",
     "@storybook/test": "^8.2.5",
     "@testing-library/react": "^16.0.0",
