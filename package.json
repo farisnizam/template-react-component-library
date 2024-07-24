@@ -1,6 +1,6 @@
 {
-  "name": "template-react-component-library",
-  "version": "0.0.1",
+  "name": "@farisnizam/template-react-component-library",
+  "version": "0.0.2",
   "description": "A react component library",
   "scripts": {
     "rollup": "rollup -c"
@@ -23,5 +23,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/farisnizam"
+  }
 }
