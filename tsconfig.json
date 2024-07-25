@@ -6,7 +6,7 @@
 
     "strict": true,                          
     "skipLibCheck": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "module": "ESNext",
     "declaration": true,
     "declarationDir": "types",
@@ -20,6 +20,9 @@
       "@less/*": ["less/*"],
       "@modules/*": ["modules/*"]
     },
+    
+    "allowJs": true,
+    "checkJs": true,
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

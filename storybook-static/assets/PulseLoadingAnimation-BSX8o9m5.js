@@ -1,0 +1,1 @@
+import{j as i}from"./jsx-runtime-DEdD30eg.js";/* empty css              */const o=()=>i.jsx("div",{className:"pulse-loading-animation"});o.__docgenInfo={description:"",methods:[],displayName:"PulseLoadingAnimation"};export{o as P};

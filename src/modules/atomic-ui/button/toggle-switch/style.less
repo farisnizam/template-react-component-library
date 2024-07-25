@@ -1,0 +1,214 @@
+@import "@less/utils";
+
+.dot-style .toggle-switch {
+
+  &.toggle-switch-style-bar-inline, &.toggle-switch-style-bar, &.toggle-switch-style-popup {
+    &.toggle-switch-color-green {
+      .switch input:checked + .slider {
+        background-color: @dotColorSuccess;
+      }
+    }
+  }
+
+  &.toggle-switch-style-bar-inline {
+
+    .switch {
+      display: flex;
+      justify-content: row;
+      align-items: center;
+      // height: 37px;
+      cursor: pointer;
+      
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+      }
+
+      input:checked + .slider {
+        background-color: @dotColorDotvuOrange;
+        &:before {
+          transform: translateX(10px) translateZ(0);
+        }
+      }
+
+      .slider {
+        cursor: pointer;
+        background-color: @dotColorPlatformBarButtonBackground;
+        height: 21px;
+        width: 33px;
+        border-radius: 21px;
+        padding: 0 4px;
+        transition: padding 0.4s linear;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        &::before {
+          content: "";
+          display: flex;
+          border-radius: 50%;
+          .size(15px);
+          transform: translateX(0) translateZ(0);
+          background-color: @dotColorBackground;
+          transition: transform 0.07s ease-out;
+        }
+      }
+
+      .text {
+        .atomFont(12,semibold);
+        color: @dotColorTextContrast;
+        user-select: none;
+        white-space: nowrap;
+      }
+    }
+
+    &.disabled {
+      opacity: .5;
+      input:checked + .slider {
+        background-color: @dotColorPlatformBarButtonBackground;
+        &:before {
+          transition: transform 0s linear;
+          transform: translateX(0) translateZ(0);
+        }
+      }
+    }
+  }
+
+  &.toggle-switch-style-bar {
+
+    .switch {
+      display: flex;
+      justify-content: row;
+      align-items: center;
+      height: 37px;
+      gap: 10px;
+      padding: 0 10px 0 5px;
+      cursor: pointer;
+      
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+      }
+
+      input:checked + .slider {
+        background-color: @dotColorDotvuOrange;
+        &:before {
+          transform: translateX(10px) translateZ(0);
+        }
+      }
+
+      .slider {
+        cursor: pointer;
+        background-color: @dotColorPlatformBarButtonBackground;
+        height: 21px;
+        width: 33px;
+        border-radius: 21px;
+        padding: 0 4px;
+        transition: padding 0.4s linear;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        &::before {
+          content: "";
+          display: flex;
+          border-radius: 50%;
+          .size(15px);
+          transform: translateX(0) translateZ(0);
+          background-color: @dotColorBackground;
+          transition: transform 0.07s ease-out;
+        }
+      }
+
+      .text {
+        .atomFont(12,semibold);
+        color: @dotColorTextContrast;
+        user-select: none;
+        white-space: nowrap;
+      }
+    }
+
+    &.disabled {
+      opacity: .5;
+      input:checked + .slider {
+        background-color: @dotColorPlatformBarButtonBackground;
+        &:before {
+          transition: transform 0s linear;
+          transform: translateX(0) translateZ(0);
+        }
+      }
+    }
+  }
+
+  &.toggle-switch-style-popup {
+
+    .switch {
+      display: flex;
+      justify-content: row;
+      align-items: center;
+      height: 37px;
+      gap: 10px;
+      padding: 0 10px 0 5px;
+      cursor: pointer;
+      
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+      }
+
+      input:checked + .slider {
+        background-color: @dotColorDotvuOrange;
+        &:before {
+          transform: translateX(10px) translateZ(0);
+        }
+      }
+
+      .slider {
+        cursor: pointer;
+        background-color: @dotColorPlatformBarButtonBackground;
+        height: 21px;
+        width: 33px;
+        border-radius: 21px;
+        padding: 0 4px;
+        transition: padding 0.4s linear;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        &::before {
+          content: "";
+          display: flex;
+          border-radius: 50%;
+          .size(15px);
+          transform: translateX(0) translateZ(0);
+          background-color: @dotColorBackground;
+          transition: transform 0.07s ease-out;
+        }
+      }
+
+      .text {
+        .atomFont(12, normal);
+        color: @dotColorBlack;
+        user-select: none;
+        white-space: nowrap;
+      }
+    }
+
+    &.disabled {
+      opacity: .5;
+      input:checked + .slider {
+        background-color: @dotColorPlatformBarButtonBackground;
+        &:before {
+          transition: transform 0s linear;
+          transform: translateX(0) translateZ(0);
+        }
+      }
+    }
+  }
+}

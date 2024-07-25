@@ -1,0 +1,56 @@
+@import "@less/utils";
+@import "@less/brand-utils";
+@import "@modules/atomic-ui/atomic-brand-mixins.less";
+
+.icon-button {
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 50px;
+  max-height: 50px;
+
+  .icon {
+    display: flex;
+  }
+
+  &.orange-static {
+    .svgAndColor(@dotColorOrange);
+  }
+
+  &.black-static {
+    .svgAndColor(@dotColorText);
+  }
+
+  &.orange-hover {
+    .svgAndColor(@dotColorText);
+    &:hover, &:focus { .svgAndColor(@dotColorOrange); }
+  }
+
+  &.gray-orange-hover {
+    .svgAndColor(#999999);
+    &:hover, &:focus { .svgAndColor(@dotColorOrange); }
+  }
+
+  &.orange-bordered-hover {
+    .svgAndColor(@dotColorDotvuOrange);
+    border: 2px solid @dotColorDotvuOrange;
+    .roundCorners();
+    &:hover, &:focus {
+      background-color: @dotColorLightOrange;
+    }
+  }
+
+  &.size-40 {
+    max-width: 40px;
+    max-height: 40px;
+    padding: 0 10px;
+  }
+
+  &.size-30 {
+    max-width: 30px;
+    max-height: 30px;
+    padding: 3px;
+  }
+}

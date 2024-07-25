@@ -1,0 +1,968 @@
+@import "@less/utils";
+@import "@less/brand-utils";
+@import "./mixins.less";
+@import "../atomic-brand-mixins.less";
+
+//
+// DEFAULT BUTTONS
+//
+
+.buttonPrimaryColorsContrast() {
+  .buttonStroke(
+    @normal: @dotColorStrokePrimaryButtonContrastStatic,
+    @hover: @dotColorStrokePrimaryButtonContrastHover,
+    @active: @dotColorStrokePrimaryButtonContrastActive,
+    @disabled: @dotColorStrokePrimaryButtonContrastDisabled
+  );
+  .buttonBackground(
+    @normal: @dotColorBackgroundPrimaryButtonContrastStatic,
+    @hover: @dotColorBackgroundPrimaryButtonContrastHover,
+    @active: @dotColorBackgroundPrimaryButtonContrastActive,
+    @disabled: @dotColorBackgroundPrimaryButtonContrastDisabled
+  );
+  .buttonColors(
+    @normal: @dotColorTextPrimaryButtonContrastStatic,
+    @hover: @dotColorTextPrimaryButtonContrastHover,
+    @active: @dotColorTextPrimaryButtonContrastActive,
+    @disabled: @dotColorTextPrimaryButtonContrastDisabled
+  );
+}
+
+.buttonPrimaryColors() {
+  .buttonStroke(
+    @normal: @dotColorStrokePrimaryButtonStatic,
+    @hover: @dotColorStrokePrimaryButtonHover,
+    @active: @dotColorStrokePrimaryButtonActive,
+    @disabled: @dotColorStrokePrimaryButtonDisabled
+  );
+  .buttonBackground(
+    @normal: @dotColorBackgroundPrimaryButtonStatic,
+    @hover: @dotColorBackgroundPrimaryButtonHover,
+    @active: @dotColorBackgroundPrimaryButtonActive,
+    @disabled: @dotColorBackgroundPrimaryButtonDisabled,
+  );
+  .buttonColors(
+    @normal: @dotColorTextPrimaryButtonStatic,
+    @hover: @dotColorTextPrimaryButtonHover,
+    @active: @dotColorTextPrimaryButtonActive,
+    @disabled: @dotColorTextPrimaryButtonDisabled,
+  );
+}
+
+.buttonPrimary() {
+  .buttonBasics();
+  .buttonAlignCenter();
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: stretch;
+  text-transform: none;
+
+  //
+  // CUSTOM TO GENERAL BUTTONS
+  //
+  &.has-icon {
+    text-transform: uppercase;
+
+    &.has-icon-left.icon-animation-rotate {
+      &:hover .icon {
+        transition: transform .2s ease-out;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.button(primary, {
+  .buttonPrimary();
+  .buttonPrimaryColors();
+  .buttonIconSize(18px);
+  .atomFont(16,'semibold');
+  height: 40px;
+});
+
+.button(primary-contrast, {
+  .buttonPrimary();
+  .buttonPrimaryColorsContrast();
+  .buttonIconSize(18px);
+  .atomFont(16,'semibold');
+  height: 40px;
+});
+
+.button(primary-large, {
+  .buttonPrimary();
+  .buttonPrimaryColors();
+  .buttonIconSize(25px);
+  .atomFont(20,'semibold');
+  height: 60px;
+});
+
+.button(secondary, {
+  .buttonBasics();
+  .buttonAlignLeft(8px);
+  .buttonIconSize(14px);
+  .atomFont(16,'normal');
+  line-height: 1.4;
+  .buttonBackground(
+    @normal: transparent,
+    @hover: transparent,
+    @active: transparent,
+    @disabled: transparent
+  );
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: stretch;
+
+  &:not(.has-icon) {
+    .buttonColors(
+      @normal: @dotColorTextSecondary,
+      @hover: @dotColorTextSecondaryHover,
+      @active: @dotColorTextSecondaryActive,
+      @disabled: @dotColorTextSecondaryDisabled,
+    );
+    .buttonUnderlineEffect(normal);
+  }
+
+  &.has-text.has-icon {
+    .buttonColors(
+      @normal: @dotColorTextSecondaryActive,
+      @hover: @dotColorTextSecondaryHover,
+      @active: @dotColorTextSecondaryActive,
+      @disabled: @dotColorTextSecondaryDisabled,
+    );
+
+    &.has-icon-left {
+      &:hover .icon.animate {
+        transition: transform .2s ease-out;
+        transform: rotate(180deg);
+      }
+    }
+
+    &.has-icon-right {
+      &:hover .icon.animate {
+        transform: translate3d(10px,0,0);
+        transition: transform .2s ease-out;
+      }
+    }
+  }
+});
+
+.button(secondary-orange, {
+  .buttonBasics();
+  .buttonAlignLeft();
+  .buttonIconSize(18px);
+  .atomFont(16, 'normal');
+  line-height: 1.4;
+  .buttonBackground(@normal: transparent,
+    @hover: transparent,
+    @active: transparent,
+    @disabled: transparent);
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: stretch;
+
+  &:not(.has-icon) {
+    .buttonColors(@normal: @dotColorTextPrimaryButtonStatic,
+      @hover: @dotColorTextSecondaryHover,
+      @active: @dotColorTextSecondaryActive,
+      @disabled: @dotColorTextPrimaryButtonDisabled,
+    );
+    .buttonUnderlineEffect(normal);
+  }
+
+  &.has-text.has-icon {
+    .buttonColors(@normal: @dotColorTextPrimaryButtonStatic,
+      @hover: @dotColorTextPrimaryButtonHover,
+      @active: @dotColorTextPrimaryButtonActive,
+      @disabled: @dotColorTextPrimaryButtonDisabled,
+    );
+
+    &.has-icon-left {
+      &:hover .icon.animate {
+        transition: transform .2s ease-out;
+        transform: rotate(180deg);
+      }
+    }
+
+    &.has-icon-right {
+      &:hover .icon.animate {
+        transform: translate3d(10px, 0, 0);
+        transition: transform .2s ease-out;
+      }
+    }
+  }
+});
+
+.button(ui-selectable-gray, {
+  @height: 50px;
+  .buttonIconSize(18px);
+  .atomFont(16,'normal');
+  .buttonBasics();
+  .buttonAlignCenter();
+  .shadowEffect();
+  height: @height;
+  align-items: center;
+  justify-content: center;
+  align-content: stretch;
+  text-transform: none;
+
+  .buttonStroke(
+    @normal: @dotColorBackground,
+    @hover: @dotColorTintOrange,
+    @active: @dotColorDotvuOrange,
+    @disabled: @dotColorBackground,
+    @roundCorners: full
+  );
+  .buttonBackground(
+    @normal: @dotColorGrayBackground,
+    @hover: @dotColorGrayBackground,
+    @active: @dotColorGrayBackground,
+    @disabled: @dotColorGrayBackground,
+  );
+  .buttonColors(
+    @normal: @dotColorText,
+    @hover: @dotColorText,
+    @active: @dotColorText,
+    @disabled: @dotColorText,
+  );
+
+  &.selected {
+    .buttonStroke(
+      @normal: @dotColorDotvuOrange,
+      @hover: @dotColorDotvuOrange,
+      @active: @dotColorTintOrange,
+      @disabled: @dotColorBackground,
+      @roundCorners: full
+    );
+  }
+
+  //
+  // CUSTOM TO GENERAL BUTTONS
+  //
+  &.has-icon {
+    text-transform: uppercase;
+
+    &.has-icon-left {
+      &:hover .icon.animate {
+        transition: transform .2s ease-out;
+        transform: rotate(180deg);
+      }
+    }
+  }
+});
+
+.button(ui-contrast, {
+  @height: 50px;
+  .buttonIconSize(18px);
+  .atomFont(16,'light');
+  .buttonBasics();
+  .buttonAlignCenter();
+  .shadowEffect();
+  height: @height;
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: stretch;
+  text-transform: uppercase;
+
+  .buttonStroke(
+    @normal: @dotColorStandardGray,
+    @hover: @dotColorStandardGray,
+    @active: @dotColorStandardGray,
+    @disabled: @dotColorStandardGray,
+    @roundCorners: full
+  );
+  .buttonBackground(
+    @normal: @dotColorStandardGray,
+    @hover: @dotColorStandardGray,
+    @active: @dotColorStandardGray,
+    @disabled: @dotColorStandardGray,
+  );
+  .buttonColors(
+    @normal: @dotColorTextContrast,
+    @hover: @dotColorTextContrast,
+    @active: @dotColorTextContrast,
+    @disabled: @dotColorTextContrast,
+  );
+
+  //
+  // CUSTOM TO GENERAL BUTTONS
+  //
+  &.has-icon {
+    text-transform: uppercase;
+
+    &.has-icon-left {
+      &:hover .icon.animate {
+        transition: transform .2s ease-out;
+        transform: rotate(180deg);
+      }
+    }
+  }
+});
+
+.buttonPlatformBarHeigh() {
+  @height: @dotPlatformBarButtonHeight; // @dotPlatformBarHeight * 0.62
+  height: @height;
+  min-height: @height; // flex
+}
+
+.button(bar-icon-xl, {
+  .buttonPlatformBarHeigh();
+  width: @dotPlatformBarButtonHeight;
+  .buttonIconSize(18px);
+  .buttonBackground(
+    @normal: transparent,
+    @hover: transparent,
+    @active: transparent,
+    @disabled: transparent
+  );
+  .buttonColors(
+    @normal: @dotColorTextContrast,
+    @hover: @dotColorDotvuOrange,
+    @active: @dotColorDotvuOrange,
+    @disabled: fade(@dotColorTextContrast,50%),
+  );
+  .icon {
+    display: flex;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  .text { display: none }
+});
+
+.button(bar, {
+  .buttonPlatformBarHeigh();
+  .buttonIconSize(14px);
+  .atomFont(13,'medium');
+  .buttonBackground(
+    @normal: transparent,
+    @hover: transparent,
+    @active: transparent,
+    @disabled: transparent
+  );
+  .buttonColors(
+    @normal: @dotColorTextContrast,
+    @hover: @dotColorDotvuOrange,
+    @active: @dotColorDotvuOrange,
+    @disabled: fade(@dotColorTextContrast,50%),
+  );
+  .icon {
+    display: flex;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+  padding: 0 10px;
+});
+
+.button(bar-orange-icon, {
+  .buttonIconSize(14px);
+  .atomFont(13,'medium');
+  .buttonBackground(
+    @normal: transparent,
+    @hover: transparent,
+    @active: transparent,
+    @disabled: transparent
+  );
+  .buttonTextColor(
+    @normal: @dotColorTextContrast,
+    @hover: @dotColorTextContrast,
+    @active: @dotColorTextContrast,
+    @disabled: fade(@dotColorTextContrast,50%),
+  );
+  .buttonIconColor(
+    @normal: @dotColorDotvuOrange,
+    @hover: @dotColorDotvuOrange,
+    @active: @dotColorDotvuOrange,
+    @disabled: fade(@dotColorTextContrast,50%)
+  );
+  .icon {
+    display: flex;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 0 5px 0 0;
+  height: 54px;
+  min-height: 54px; // flex
+});
+
+.button(bar-contrast, {
+  .buttonPlatformBarHeigh();
+  .buttonBasics();
+  .buttonAlignCenter();
+  .buttonIconSize(14px);
+  .buttonBackground(
+    @normal: @dotColorBackground,
+    @hover: darken(@dotColorBackground,5%),
+    @active: darken(@dotColorBackground,5%),
+    @disabled: fade(@dotColorBackground,50%)
+  );
+  .buttonColors(
+    @normal: @dotColorDotvuOrange,
+    @hover: @dotColorDotvuOrange,
+    @active: @dotColorDotvuOrange,
+    @disabled: @dotColorDotvuOrange,
+  );
+  .atomFont(13,'semibold');
+  .icon {
+    display: flex;
+  }
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+  text-transform: uppercase;
+  padding: 0 10px;
+  border-radius: 50px;
+});
+
+.button-bar-nav-orange-icon {
+  .buttonIconSize(14px);
+  .atomFont(13,'medium');
+  .buttonBackground(
+    @normal: transparent,
+    @hover: transparent,
+    @active: transparent,
+    @disabled: transparent
+  );
+  .buttonIconColor(
+    @normal: @dotColorDotvuOrange,
+    @hover: @dotColorDotvuOrange,
+    @active: @dotColorDotvuOrange,
+    @disabled: fade(@dotColorTextContrast,50%)
+  );
+  .icon {
+    display: flex;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 1.4;
+    .text-1 {
+      // text-transform: uppercase;
+      .atomFont(11,normal);
+      font-weight: 400;
+      .buttonTextColor(
+        @normal: #b5b5b5,
+        @hover: #b5b5b5,
+        @active: #b5b5b5,
+        @disabled: fade(#b5b5b5,50%),
+      );
+    }
+    .text-2 {
+      .atomFont(13,medium);
+      .buttonTextColor(
+        @normal: @dotColorTextContrast,
+        @hover: @dotColorTextContrast,
+        @active: @dotColorTextContrast,
+        @disabled: fade(@dotColorTextContrast,50%),
+      );
+    }
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  padding: 0 5px 0 0;
+  height: 54px;
+  min-height: 54px; // flex
+  .buttonSelectableBottomBorder();
+}
+
+// .button(bar-nav-orange-icon, {
+//   .buttonIconSize(14px);
+//   .atomFont(13,'medium');
+//   .buttonBackground(
+//     @normal: transparent,
+//     @hover: transparent,
+//     @active: transparent,
+//     @disabled: transparent
+//   );
+//   .buttonTextColor(
+//     @normal: @dotColorTextContrast,
+//     @hover: @dotColorTextContrast,
+//     @active: @dotColorTextContrast,
+//     @disabled: fade(@dotColorTextContrast,50%),
+//   );
+//   .buttonIconColor(
+//     @normal: @dotColorDotvuOrange,
+//     @hover: @dotColorDotvuOrange,
+//     @active: @dotColorDotvuOrange,
+//     @disabled: fade(@dotColorTextContrast,50%)
+//   );
+//   .icon {
+//     display: flex;
+//   }
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 12px;
+//   padding: 0 5px 0 0;
+//   height: 54px;
+//   min-height: 54px; // flex
+//   .buttonSelectableBottomBorder();
+// });
+
+.button-platform-bar-wmmao-contrast {
+  .buttonPlatformBarHeigh();
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  &.has-options button.main-button {
+    border-radius: 50px 0 0 50px;
+  }
+  button.main-button {
+    .buttonPlatformBarHeigh();
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding: 0 20px 0 25px;
+    text-transform: uppercase;
+    .buttonIconSize(14px);
+    .icon {
+      display: flex;
+    }
+    .atomFont(13,'medium');
+    .buttonBackground(
+      @normal: @dotColorBackground,
+      @hover: darken(@dotColorBackground,5%),
+      @active: darken(@dotColorBackground,5%),
+      @disabled: fade(@dotColorBackground,50%)
+    );
+    .buttonColors(
+      @normal: @dotColorDotvuOrange,
+      @hover: @dotColorDotvuOrange,
+      @active: @dotColorDotvuOrange,
+      @disabled: @dotColorDotvuOrange,
+    );
+    .text {
+      white-space: nowrap;
+    }
+  }
+  button.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 50px 50px 0;
+    padding: 0 11px 0 5px;
+    .buttonIconSize(14px);
+    .buttonBackground(
+      @normal: darken(@dotColorBackground,5%),
+      @hover: darken(@dotColorBackground,10%),
+      @active: darken(@dotColorBackground,10%),
+      @disabled: fade(darken(@dotColorBackground,5%),50%)
+    );
+    .buttonColors(
+      @normal: @dotColorDotvuOrange,
+      @hover: @dotColorDotvuOrange,
+      @active: @dotColorDotvuOrange,
+      @disabled: @dotColorDotvuOrange,
+    );
+  }
+};
+
+.button-platform-bar-with-options {
+  .buttonPlatformBarHeigh();
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  button.main-button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px 0 0 50px;
+    padding: 0 20px 0 25px;
+    text-transform: uppercase;
+    .buttonIconSize(14px);
+    .icon {
+      display: flex;
+    }
+    .atomFont(13,'medium');
+    .buttonBackground(
+      @normal: @dotColorPlatformBarButtonBackground,
+      @hover: lighten(@dotColorPlatformBarButtonBackground,5%),
+      @active: lighten(@dotColorPlatformBarButtonBackground,5%),
+      @disabled: fade(@dotColorPlatformBarButtonBackground,50%)
+    );
+    .buttonColors(
+      @normal: @dotColorTextContrast,
+      @hover: @dotColorTextContrast,
+      @active: @dotColorTextContrast,
+      @disabled: @dotColorTextContrast,
+    );
+  }
+  button.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 50px 50px 0;
+    padding: 0 11px 0 5px;
+    .buttonIconSize(14px);
+    .buttonBackground(
+      @normal: #6f6f6f,
+      @hover: lighten(#6f6f6f,5%),
+      @active: lighten(#6f6f6f,5%),
+      @disabled: fade(#6f6f6f,50%)
+    );
+    .buttonColors(
+      @normal: @dotColorTextContrast,
+      @hover: @dotColorTextContrast,
+      @active: @dotColorTextContrast,
+      @disabled: @dotColorTextContrast,
+    );
+  }
+}
+
+// .button-platform-bar {
+//   height: @dotPlatformBarButtonHeight;
+//   width: @dotPlatformBarButtonHeight + 1;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   border-radius: @dotPlatformBarButtonHeight + 1;
+//   padding: 0 0;
+//   text-transform: uppercase;
+//   .buttonIconSize(14px);
+//   .icon {
+//     display: flex;
+//   }
+//   .atomFont(13,'medium');
+//   .buttonBackground(
+//     @normal: @dotColorPlatformBarButtonBackground,
+//     @hover: lighten(@dotColorPlatformBarButtonBackground,5%),
+//     @active: lighten(@dotColorPlatformBarButtonBackground,5%),
+//     @disabled: fade(@dotColorPlatformBarButtonBackground,50%)
+//   );
+//   .buttonColors(
+//     @normal: @dotColorTextContrast,
+//     @hover: @dotColorTextContrast,
+//     @active: @dotColorTextContrast,
+//     @disabled: @dotColorTextContrast,
+//   );
+//   &.active {
+//     .buttonBackground(
+//       @normal: lighten(@dotColorPlatformBarButtonBackground,5%),
+//       @hover: lighten(@dotColorPlatformBarButtonBackground,5%),
+//       @active: lighten(@dotColorPlatformBarButtonBackground,5%),
+//       @disabled: fade(@dotColorPlatformBarButtonBackground,50%)
+//     );
+//   }
+// }
+
+.button-platform-bar {
+  height: @dotPlatformBarButtonHeight;
+  width: @dotPlatformBarButtonHeight;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0;
+  text-transform: uppercase;
+  .buttonIconSize(16px);
+  .icon {
+    display: flex;
+  }
+  .atomFont(13,'medium');
+  .buttonBackground(
+    @normal: transparent,
+    @hover: transparent,
+    @active: transparent,
+    @disabled: transparent
+  );
+  .buttonColors(
+    @normal: @dotColorTextContrast,
+    @hover: @dotColorOrange,
+    @active: @dotColorOrange,
+    @disabled: fade(@dotColorTextContrast,50%),
+  );
+  &.active {
+    .buttonColors(
+      @normal: @dotColorOrange,
+      @hover: @dotColorOrange,
+      @active: @dotColorOrange,
+      @disabled: fade(@dotColorTextContrast,50%),
+    );
+  }
+}
+
+.button-platform-bar-contrast {
+  .buttonPlatformBarHeigh();
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  &.has-options button.main-button {
+    border-radius: 50px 0 0 50px;
+  }
+  button.main-button {
+    .buttonPlatformBarHeigh();
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding: 0 20px 0 25px;
+    text-transform: uppercase;
+    .buttonIconSize(14px);
+    .icon {
+      display: flex;
+    }
+    .atomFont(13,'medium');
+    .buttonBackground(
+      @normal: @dotColorBackground,
+      @hover: darken(@dotColorBackground,5%),
+      @active: darken(@dotColorBackground,5%),
+      @disabled: fade(@dotColorBackground,50%)
+    );
+    .buttonColors(
+      @normal: @dotColorDotvuOrange,
+      @hover: @dotColorDotvuOrange,
+      @active: @dotColorDotvuOrange,
+      @disabled: @dotColorDotvuOrange,
+    );
+    .text {
+      white-space: nowrap;
+    }
+  }
+  button.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 50px 50px 0;
+    padding: 0 11px 0 5px;
+    .buttonIconSize(14px);
+    .buttonBackground(
+      @normal: darken(@dotColorBackground,5%),
+      @hover: darken(@dotColorBackground,10%),
+      @active: darken(@dotColorBackground,10%),
+      @disabled: fade(darken(@dotColorBackground,5%),50%)
+    );
+    .buttonColors(
+      @normal: @dotColorDotvuOrange,
+      @hover: @dotColorDotvuOrange,
+      @active: @dotColorDotvuOrange,
+      @disabled: @dotColorDotvuOrange,
+    );
+  }
+}
+
+.button-primary-with-options {
+  
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  
+  .buttonStroke(
+    @normal: @dotColorStrokePrimaryButtonStatic,
+    @hover: @dotColorStrokePrimaryButtonHover,
+    @active: @dotColorStrokePrimaryButtonActive,
+    @disabled: @dotColorStrokePrimaryButtonDisabled
+  );
+
+  gap: 0;
+  
+  button.main-button {
+    // .roundCorners();
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    .buttonIconSize(18px);
+    .icon {
+      display: flex;
+    }
+    .atomFont(16,'semibold');
+    .buttonBackground(
+      @normal: @dotColorBackgroundPrimaryButtonStatic,
+      @hover: @dotColorBackgroundPrimaryButtonHover,
+      @active: @dotColorBackgroundPrimaryButtonActive,
+      @disabled: @dotColorBackgroundPrimaryButtonDisabled
+    );
+    .buttonColors(
+      @normal: @dotColorTextPrimaryButtonStatic,
+      @hover: @dotColorTextPrimaryButtonHover,
+      @active: @dotColorTextPrimaryButtonActive,
+      @disabled: @dotColorTextPrimaryButtonDisabled,
+    );
+  }
+  button.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    .buttonIconSize(14px);
+    .buttonBackground(
+      @normal: fade(@dotColorBackgroundPrimaryButtonHover, 10%),
+      @hover: @dotColorBackgroundPrimaryButtonHover,
+      @active: @dotColorBackgroundPrimaryButtonActive,
+      @disabled: @dotColorBackgroundPrimaryButtonDisabled
+    );
+    .buttonColors(
+      @normal: @dotColorTextPrimaryButtonStatic,
+      @hover: @dotColorTextPrimaryButtonHover,
+      @active: @dotColorTextPrimaryButtonActive,
+      @disabled: @dotColorTextPrimaryButtonDisabled,
+    );
+  }
+}
+
+//
+// DEFAULT LINKS
+//
+
+.link(secondary, {
+  .linkBasics();
+  .linkAlignLeft();
+  .linkColors(
+    @normal: @dotColorTextSecondary,
+    @visited: @dotColorTextSecondary,
+    @hover: @dotColorTextSecondaryHover,
+    @active: @dotColorTextSecondaryActive,
+    @disabled: @dotColorTextSecondaryDisabled
+  );
+  .linkUnderlineEffect(@mode: normal);
+  .atomFont(16,'normal');
+  .linkIconSize(18px);
+  line-height: 1.4;
+
+  &.has-icon.has-text {
+    .linkColors(
+      @normal: @dotColorTextSecondaryActive,
+      @visited: @dotColorTextSecondaryActive,
+      @hover: @dotColorTextSecondaryHover,
+      @active: @dotColorTextSecondaryActive,
+      @disabled: @dotColorTextSecondaryDisabled
+    );
+
+    &.has-icon-left {
+      &.behavior-normal:hover .icon {
+        transition: transform .2s ease-out;
+        transform: rotate(180deg);
+      }
+      &.behavior-back:hover .icon {
+        transform: translate3d(-10px,0,0);
+        transition: transform .2s ease-out;
+      }
+    }
+
+    &.has-icon-right {
+      &:hover .icon.animate {
+        transform: translate3d(10px,0,0);
+        transition: transform .2s ease-out;
+      }
+    }
+  }
+
+});
+
+.link(secondary-contrast, {
+  .linkBasics();
+  .linkAlignLeft();
+  .linkColors(
+    @normal: @dotColorTextContrast,
+    @visited: @dotColorTextContrast,
+    @hover: @dotColorTextSecondaryHover,
+    @active: @dotColorTextSecondaryActive,
+    @disabled: @dotColorTextSecondaryDisabled
+  );
+  .linkUnderlineEffect(@mode: normal);
+  .atomFont(16,'normal');
+  .linkIconSize(18px);
+  line-height: 1.4;
+
+  &.has-icon {
+    .linkColors(
+      @normal: @dotColorTextSecondaryActive,
+      @visited: @dotColorTextSecondaryActive,
+      @hover: @dotColorTextSecondaryHover,
+      @active: @dotColorTextSecondaryActive,
+      @disabled: @dotColorTextSecondaryDisabled
+    );
+
+    &.has-icon-left {
+      &:hover .icon.animate {
+        transition: transform .2s ease-out;
+        transform: rotate(180deg);
+      }
+    }
+
+    &.has-icon-right {
+      &:hover .icon.animate {
+        transform: translate3d(10px,0,0);
+        transition: transform .2s ease-out;
+      }
+    }
+  }
+
+});
+
+
+.link(like-input, {
+  .linkBasics();
+  .linkAlignLeft();
+  .linkColors(
+    @normal: @dotColorTextSecondary,
+    @visited: @dotColorTextSecondary,
+    @hover: @dotColorTextSecondaryHover,
+    @active: @dotColorTextSecondaryActive,
+    @disabled: @dotColorTextSecondaryDisabled
+  );
+  .linkUnderlineEffect(@mode: normal);
+  .atomFont(16,'normal');
+  .linkIconSize(18px);
+  line-height: 1.4;
+
+  &.has-icon.has-text {
+    .linkColors(
+      @normal: @dotColorTextSecondaryActive,
+      @visited: @dotColorTextSecondaryActive,
+      @hover: @dotColorTextSecondaryHover,
+      @active: @dotColorTextSecondaryActive,
+      @disabled: @dotColorTextSecondaryDisabled
+    );
+
+    &.has-icon-left {
+      &.behavior-normal:hover .icon {
+        transition: transform .2s ease-out;
+        transform: rotate(180deg);
+      }
+      &.behavior-back:hover .icon {
+        transform: translate3d(-10px,0,0);
+        transition: transform .2s ease-out;
+      }
+    }
+
+    &.has-icon-right {
+      &:hover .icon.animate {
+        transform: translate3d(10px,0,0);
+        transition: transform .2s ease-out;
+      }
+    }
+  }
+
+});

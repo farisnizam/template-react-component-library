@@ -1,0 +1,21 @@
+@import "@less/utils";
+@import "@modules/atomic-ui/atomic-brand-mixins.less";
+@import "@modules/atomic-ui/button/mixins.less";
+
+.dot-style .atomic-ui-menu, .dot-style.atomic-ui-menu {
+
+  @keyframes fadeAndSlideIn {
+    from {
+      opacity: 0;
+      transform: translate3d(0,8px,0)
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0,0,0)
+    }
+  }
+  
+  animation: fadeAndSlideIn ease 0.18s;
+  animation-fill-mode: forwards;
+
+}

@@ -1,0 +1,47 @@
+@import "@less/utils";
+@import "@modules/atomic-ui/atomic-brand-mixins.less";
+
+.dot-style {
+  @color: @dotColorGrayBackground;
+  .tooltip {
+    position: absolute;
+    background-color: @color;
+    color: @dotColorText;
+    .atomFont(12, 'normal');
+    box-shadow: 7px 7px 8px 2px rgba(0,0,0,.4);
+    border-radius: 2px;
+    padding: 8px 16px;
+    // z-index: 1;
+    z-index: 100000000;
+    max-width: 400px;
+  }
+  .tooltip-arrow {
+    position: absolute;
+    z-index: 1;
+    transform-origin: center center;
+    &.tooltip-arrow-top {
+      border-right: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-bottom: 1px solid @color;
+      transform: translateY(-4px) scale(12);
+    }
+    &.tooltip-arrow-right {
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      border-left: 1px solid @color;
+      transform: translateX(4px) scale(12);
+    }
+    &.tooltip-arrow-bottom {
+      border-right: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-top: 1px solid @color;
+      transform: translateY(4px) scale(12);
+    }
+    &.tooltip-arrow-left {
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      border-right: 1px solid @color;
+      transform: translateX(-4px) scale(12);
+    }
+  }
+}

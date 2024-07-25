@@ -1,0 +1,283 @@
+@import "@less/utils";
+@import "@less/brand-utils";
+@import "../atomic-brand-mixins.less";
+
+//
+// ICON AND TEXT BEHAVIOR IS SAME FOR BUTTONS OR LINKS
+// SINCE STYLE IS THE SAME
+//
+
+// all icons are on a square canvas, so w=h
+._iconSize(@size) {
+  .icon {
+    .size(@size);
+    // required to keep size in flex behavior
+    min-width: @size;
+    min-height: @size;
+  }
+}
+
+._iconColor(@color) {
+  .icon {
+    .svgFill(@color);
+  }
+}
+
+._iconAndTextBasicsCenterAlign(@spacing: 12px) {
+  .icon {
+    display: flex;
+    margin-left: 20px;
+  }
+  .text {
+    flex-grow: 0;
+    // required for flex with ellipsis
+    min-width: 0;
+    text-align: center;
+    .ellipsis();
+    margin: 0 30px;
+  }
+  .icon + .text {
+    margin-left: @spacing;
+  }
+  .text + .icon-right {
+    // MAY NOT BE THE RIGHT PLACE FOR THIS
+    margin-left: @spacing;
+    margin-right: @spacing;
+  }
+}
+
+._iconOnly() {
+  .icon {
+    display: flex;
+    margin: 0;
+  }
+}
+
+// none, normal, permanent
+._underlineEffect(@mode: normal) {
+  & when (@mode = normal) {
+    text-decoration: none; // eventually prettified with some animation
+    &:hover, &:focus {
+      text-decoration: underline; // eventually prettified with some animation
+    }
+    &:active {
+      text-decoration: underline; // eventually prettified with some animation
+    }
+    &:disabled, &:hover:disabled {
+      text-decoration: none; // eventually prettified with some animation
+    }
+  }
+  & when (@mode = none) {
+    &, &:hover, &:focus, &:active, &:disabled, &:hover:disabled {
+      text-decoration: none;
+    }
+  }
+  & when (@mode = permanent) {
+    &, &:hover, &:focus, &:active, &:disabled, &:hover:disabled {
+      text-decoration: underline;
+    }
+  }
+}
+
+//
+// BUTTON SPECIFIC
+//
+.buttonBasics() {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttonAlignCenter(@spacing: 12px) {
+  ._iconAndTextBasicsCenterAlign(@spacing);
+  padding: 0;
+}
+
+.buttonIconOnly() {
+  ._iconOnly();
+}
+
+.buttonAlignLeft(@spacing: 12px) {
+  .icon {
+    display: flex;
+  }
+  .text {
+    flex-grow: 1;
+    // required for flex with ellipsis
+    min-width: 0;
+    .ellipsis();
+  }
+  .icon + .text {
+    margin-left: @spacing;
+    text-align: left;
+  }
+  .text + .icon-right {
+    // MAY NOT BE THE RIGHT PLACE FOR THIS
+    margin-left: @spacing;
+  }
+}
+
+.buttonStroke(@normal, @hover, @active, @disabled, @roundCorners: normal) {
+  border: 2px solid @normal;
+  &:hover, &:focus { border-color: @hover; }
+  &:active { border-color: @active; }
+  &:disabled, &:hover:disabled { border-color: @disabled; }
+  & when (@roundCorners = normal) { .roundCorners(); }
+  & when (@roundCorners = full) { .fullRoundCorners(); }  
+}
+
+.buttonBackground(@normal, @hover, @active, @disabled) {
+  background-color: @normal;
+  &:hover, &:focus { background-color: @hover; }
+  &:active { background-color: @active; }
+  &:disabled, &:hover:disabled { background-color: @disabled; }
+}
+
+.buttonTextColor(@normal, @hover, @active, @disabled) {
+  color: @normal;
+  &:hover, &:focus { color: @hover; }
+  &:active { color: @active; }
+  &:disabled, &:hover:disabled { color: @disabled; }
+}
+
+.buttonHeight(@height) {
+  height: @height;
+  min-height: @height; // required for flex
+}
+
+.buttonIconColor(@normal, @hover, @active, @disabled) {
+  ._iconColor(@normal);
+  &:hover, &:focus { ._iconColor(@hover); }
+  &:active { ._iconColor(@active); }
+  &:disabled, &:hover:disabled { ._iconColor(@disabled); }
+}
+
+// use if icon and text should have same colors
+.buttonColors(@normal, @hover, @active, @disabled) {
+  .svgAndColor(@normal);
+  &:hover, &:focus { .svgAndColor(@hover); }
+  &:active { .svgAndColor(@active); }
+  &:disabled, &:hover:disabled { .svgAndColor(@disabled); }
+}
+
+// @mode: none, normal, permanent
+.buttonUnderlineEffect(@mode) {
+  ._underlineEffect(@mode);
+}
+
+.buttonIconSize(@size: 18px) {
+  ._iconSize(@size);
+}
+
+.button(@style, @rules) {
+   button.button-@{style} {
+    @rules();
+  }
+}
+
+.buttonSelectableBottomBorder() {
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom-color 0s linear;
+  &:hover {
+    transition: border-bottom-color 0s linear;
+    border-bottom-color: fade(@dotColorDotvuOrange,50%);
+  }
+  &.selected {
+    border-bottom-color: @dotColorDotvuOrange;
+  }
+}
+
+// 
+// LINK SPECIFIC
+// 
+
+.linkBasics() {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  .icon {
+    display: flex;
+  }
+  .text {
+    // flex-grow: 1;
+    // required for flex with ellipsis
+    min-width: 0;
+    .ellipsis();
+  }
+  &.disabled, &:disabled {
+    /* shows a default cursor instead of the pointer */
+    cursor: default;
+    /* remove underline */
+    text-decoration: none;
+    .linkUnderlineEffect(@mode: none);
+  }
+}
+
+.linkAlignCenter() {
+  ._iconAndTextBasicsCenterAlign();
+  padding: 0;
+}
+
+.linkAlignLeft() {
+  justify-content: flex-start;
+  .icon + .text {
+    margin-left: 12px;
+    text-align: left;
+  }
+  .text + .icon-right {
+    // MAY NOT BE THE RIGHT PLACE FOR THIS
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+.linkIconOnly() {
+  ._iconOnly()
+}
+
+.linkTextColors(@normal, @visited, @hover, @active, @disabled) {
+  color: @normal;
+  &:visited { color: @visited; }
+  &:hover, &:focus { color: @hover; }
+  &:active { color: @active; }
+  &:disabled, &.disabled, &:hover:disabled, &.disabled:hover { 
+    pointer-events: none; // To disable link
+    color: @disabled;
+  }
+}
+
+.linkIconColors(@normal, @visited, @hover, @active, @disabled) {
+  .svgFill(@normal);
+  &:visited { .svgFill(@visited); }
+  &:hover, &:focus { .svgFill(@hover); }
+  &:active { .svgFill(@active); }
+  &:disabled, &.disabled, &:hover:disabled, &.disabled:hover {
+    pointer-events: none; // To disable link
+    .svgFill(@disabled);
+  }
+}
+
+.linkColors(@normal, @visited, @hover, @active, @disabled) {
+  .svgAndColor(@normal);
+  &:visited { .svgAndColor(@visited); }
+  &:hover, &:focus { .svgAndColor(@hover); }
+  &:active { .svgAndColor(@active); }
+  &:disabled, &.disabled, &:hover:disabled, &.disabled:hover {
+    pointer-events: none; // To disable link
+    .svgAndColor(@disabled);
+  }
+}
+
+.linkUnderlineEffect(@mode) {
+  ._underlineEffect(@mode);
+}
+
+.linkIconSize(@size: 18px) {
+  ._iconSize(@size);
+}
+
+.link(@style, @rules) {
+   a.link-@{style} {
+    @rules();
+  }
+}
