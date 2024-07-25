@@ -30,7 +30,7 @@ export default [
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
-        extensions: [".less"],
+        extensions: [".less", ".css"],
         use: [
           [
             "less",
