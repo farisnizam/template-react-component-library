@@ -23,7 +23,7 @@ const meta = {
   },
   // Use `fn` to spy on the onClickAsync arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClickAsync: fn(() => new Promise((resolve) => setTimeout(resolve, 2000))) },
-};
+} satisfies Meta<typeof StatesLoadingButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
