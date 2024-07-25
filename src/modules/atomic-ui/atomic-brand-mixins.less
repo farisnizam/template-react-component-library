@@ -1,0 +1,269 @@
+@import "../../less/utils.less";
+@import "../../less/brand-utils.less";
+
+.shadowEffect() { box-shadow: 7px 7px 8px 2px rgba(0,0,0,.1) }
+.borderedShadowEffect(@borderColor: @dotColorBorderGray, @borderWidth: 0.75px) {
+  box-shadow: 0px 0px 0px @borderWidth @borderColor, 7px 7px 8px 2px rgba(0,0,0,.1)
+}
+.borderEffect(@borderColor: @dotColorBorderGray) {
+  border: 1px solid @borderColor;
+}
+.bottomBorderEffect() {
+  box-shadow: 0px 0.75px 0px 0px @dotColorBorderGray;
+}
+.roundCorners() { border-radius: 3px }
+.fullRoundCorners(@height:50px) { border-radius: @height }
+
+.effectScrollBar(@color: @dotColorOrange, @backgroundColor: rgba(255, 255, 255, .6)) {
+  
+  /* Demonstrate a "mostly customized" scrollbar
+  * (won't be visible otherwise if width/height is specified) */
+  .no-osx &::-webkit-scrollbar {
+    .absPosition(auto, 0, 0, 0);
+    width: 0;
+    height: 0;
+    background-color: @backgroundColor;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  /* Add a thumb */
+  .no-osx &::-webkit-scrollbar-thumb {
+    background: @color;
+    .dotActivatableVisibilityMixin(0s, false);
+    cursor: pointer;
+    border-radius: 3px;
+  }
+
+  .no-osx &:hover {
+    &::-webkit-scrollbar {
+      width: @scrollBarWidth;
+      height: @scrollBarWidth;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      .dotActivatableVisibilityMixin_active(0.2s);
+    }
+  }
+}
+
+.effectScrollBar2(@color: @dotColorOrange, @backgroundColor: rgba(255, 255, 255, .6), @scrollBarWidth: 6px) {
+  /* Set scrollbar to overlay the content instead of pushing it */
+  // overflow-y: auto;
+  // position: relative; // Ensure this container is positioned to handle absolute positioning of children
+  // max-height: 300px; // Example max-height
+
+  &::-webkit-scrollbar {
+    position: absolute;
+    right: 0;
+    width: 0; // Default state with no visible width
+    background-color: transparent; // Ensure scrollbar background doesn't block content
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: @color;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar {
+      width: @scrollBarWidth; // Appear on hover
+      background-color: @backgroundColor; // Show background color on hover
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: @color; // Ensure the thumb is visible and styled
+    }
+  }
+}
+
+.effectVisibleScrollBar(@color: @dotColorOrange) {
+  
+  /* Demonstrate a "mostly customized" scrollbar
+  * (won't be visible otherwise if width/height is specified) */
+  .no-osx &::-webkit-scrollbar {
+    .absPosition(auto, 0, 0, 0);
+    width: @scrollBarWidth;
+    height: @scrollBarWidth;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  /* Add a thumb */
+  .no-osx &::-webkit-scrollbar-thumb {
+    background: @color;
+    // .dotActivatableVisibilityMixin(0s, false);
+    cursor: pointer;
+    border-radius: 3px;
+  }
+
+  // .no-osx &:hover {
+  //   &::-webkit-scrollbar {
+  //     width: @scrollBarWidth;
+  //     height: @scrollBarWidth;
+  //   }
+
+  //   // &::-webkit-scrollbar-thumb {
+  //   //   .dotActivatableVisibilityMixin_active(0.2s);
+  //   // }
+  // }
+}
+
+.effectVisibleScrollBar2(@color: @dotColorOrange, @size: @scrollBarWidth, @border-radius: 3px) {
+
+  /* Demonstrate a "mostly customized" scrollbar
+   * (won't be visible otherwise if width/height is specified) */
+   &::-webkit-scrollbar {
+    width: @size;
+    height: @size;
+    background-color: rgba(255,255,255,.6);
+    border-radius: @border-radius;
+    cursor: pointer;
+  }
+  
+  /* Add a thumb */
+  &::-webkit-scrollbar-thumb {
+    background: @color;
+    cursor: pointer;
+    border-radius: @border-radius;
+  }
+}
+
+.effectVisibleScrollBar2Thicker(@color: @dotColorOrange) {
+  .effectVisibleScrollBar2(@color, @scrollBarWidthThicker, 15px);
+}
+
+.menuEffect() {
+  display: flex;
+  flex-direction: column;
+  
+  background: @dotColorBackgroundLight;
+  border: 0.75px solid #cccccc;
+
+  max-height: 50vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+    
+  .effectScrollBar();
+  
+  .shadowEffect();
+  .roundCorners();
+}
+
+.menuEffectNoScroll() {
+  display: flex;
+  flex-direction: column;  
+  background: @dotColorBackgroundLight;
+  border: 0.75px solid #cccccc;      
+  .shadowEffect();
+  .roundCorners();
+}
+
+.inputBasics() {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputCaretColor() {
+  caret-color: @dotColorInputCaretColor;
+}
+
+.inputTextColor(
+  @normal: @dotColorInputTextStatic,
+  @hover: @dotColorInputTextHover,
+  @active: @dotColorInputTextActive,
+  @disabled: @dotColorInputTextDisabled
+) {
+  color: @normal;
+  &:hover { color: @hover; }
+  &:active, &:focus, &:focus-within { color: @active; }
+  &:disabled, &:hover:disabled { color: @disabled; }
+}
+
+// used e.g. for icons in checkmarks
+.inputSymbolColor(
+  @normal: @dotColorInputTextStatic,
+  @hover: @dotColorInputTextHover,
+  @active: @dotColorInputTextActive,
+  @disabled: @dotColorInputTextDisabled
+) {
+  .svgAndColor(@normal);
+  &:hover { .svgAndColor(@hover); }
+  &:active, &:focus, &:focus-within { .svgAndColor(@active); }
+  &:disabled, &:hover:disabled { .svgAndColor(@disabled); }
+}
+
+.inputTextPlaceholderColor(
+  @normal: @dotColorInputPlaceholderStatic,
+  @hover: @dotColorInputPlaceholderStatic,
+  @active: @dotColorInputPlaceholderStatic,
+  @disabled: @dotColorInputPlaceholderDisabled
+) {
+  &::placeholder { color: @normal; }
+  &:hover::placeholder { color: @hover; }
+  &:active, &:focus, &:focus-within {
+    &::placeholder { color: @active; }
+  }
+  &:disabled, &:hover:disabled {
+    &::placeholder { color: @disabled; }
+  }
+}
+
+.inputStroke(
+  @normal: @dotColorInputStrokeStatic,
+  @hover: @dotColorInputStrokeHover,
+  @active: @dotColorInputStrokeActive,
+  @disabled: @dotColorInputStrokeDisabled,
+  @error: @dotColorInputStrokeError
+) {
+  border: 1px solid @normal;
+  border-color: @normal;
+  &:hover, &:focus, &:focus-within { border-color: @hover; }
+  &:active { border-color: @active; }
+  &.disabled, &:disabled, &:hover:disabled { border-color: @disabled; }
+  &.error { 
+    border-color: transparent !important;
+    outline-color: @error;
+    outline-width: medium;
+    outline-style: solid;
+   }
+  .roundCorners();
+}
+
+.inputHeight() {
+  height: 40px;
+  min-height: 40px;
+}
+
+.inputBackground(@backgroundColor: @dotColorBackground) {
+  background: @backgroundColor;
+}
+
+._iconColors(@normal, @hover, @active) {
+  .svgFill(@normal);
+  &:hover, &:focus { .svgFill(@hover) }
+  &:active { .svgFill(@active) }
+}
+
+.labelBasics() {
+  .atomFont(16,normal);
+  color: @dotColorText;
+}
+
+.colorPickerMixin() {
+  .size(28px);
+  .roundCorners();
+  border-radius: 28px;
+  border: 1px solid @dotColorStrongGray;
+  cursor: pointer;
+  background-image: none;
+  padding: 0;
+  p+& { margin-top: @halfBasePadding; }
+  &.inline { display: inline-block; }
+  &:hover { border: 2px solid @dotColorDotvuOrange; }
+  &.active { border: 2px solid @dotColorDotvuOrange; }
+}
