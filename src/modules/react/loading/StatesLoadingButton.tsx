@@ -69,6 +69,7 @@
 
 
 import React, { useEffect, useState } from 'react';
+import './style.less'
 
 export interface StatesLoadingButtonProps {
   className?: string;

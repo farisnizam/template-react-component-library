@@ -11,6 +11,7 @@
 
 
 import React from 'react';
+import './style.less'
 
 const PulseLoadingAnimation: React.FC = () => {
   return <div className="pulse-loading-animation"></div>;
