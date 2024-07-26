@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import Button from './Button';
 import { nextIcon } from '@modules/icons';
 
-const exampleSvg = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-2.6-.35-4.68-2.44-5.03-5.03H5v-2h1.97c.35-2.6 2.43-4.68 5.03-5.03V5h2v1.97c2.6.35 4.68 2.43 5.03 5.03H19v2h-1.97c-.35 2.6-2.43 4.68-5.03 5.03V19h-2v-1.07z" fill="currentColor"/></svg>`;
+const exampleSvg = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 16 13" enable-background="new 0 0 16 13" xml:space="preserve"><g transform="translate(480 0)"><path d="M-475.25 7.5c0 1.8 1.45 3.25 3.25 3.25 1.8 0 3.25-1.45 3.25-3.25 0-1.79-1.45-3.25-3.25-3.25C-473.8 4.25-475.25 5.71-475.25 7.5zM-465 2h-3.5c-0.25-1-0.5-2-1.5-2h-4c-1 0-1.25 1-1.5 2h-3.5c-0.55 0-1 0.45-1 1v9c0 0.55 0.45 1 1 1h14c0.55 0 1-0.45 1-1V3C-464 2.45-464.45 2-465 2zM-472 11.94c-2.45 0-4.44-1.99-4.44-4.44 0-2.45 1.99-4.44 4.44-4.44 2.45 0 4.44 1.99 4.44 4.44C-467.56 9.95-469.55 11.94-472 11.94zM-465 5h-2V4h2V5z"/></g></svg>`;
 
 
 const meta: Meta<typeof Button> = {
@@ -51,6 +51,22 @@ export const Primary: Story = {
   },
 };
 
+export const PrimaryContras: Story = {
+  args: {
+    text: 'Button',
+    style: 'primary-contrast',
+    icon: exampleSvg,
+  },
+};
+
+export const PrimaryLarge: Story = {
+  args: {
+    text: 'Button',
+    style: 'primary-large',
+    icon: exampleSvg,
+  },
+};
+
 export const Secondary: Story = {
   args: {
     text: 'Button',
@@ -59,18 +75,61 @@ export const Secondary: Story = {
   },
 };
 
-export const Large: Story = {
+export const SecondaryOrange: Story = {
   args: {
     text: 'Button',
-    style: 'primary-large',
+    style: 'secondary-orange',
     icon: exampleSvg,
   },
 };
 
-export const Small: Story = {
+export const UISelectableGray: Story = {
+  args: {
+    text: 'Button',
+    style: 'ui-selectable-gray',
+    icon: exampleSvg,
+  },
+};
+
+export const UIContrast: Story = {
+  args: {
+    text: 'Button',
+    style: 'ui-contrast',
+    icon: exampleSvg,
+  },
+};
+
+
+export const BarIconXL: Story = {
+  args: {
+    text: 'Button',
+    style: 'bar-icon-xl',
+    icon: exampleSvg,
+  },
+};
+
+export const Bar: Story = {
   args: {
     text: 'Button',
     style: 'bar',
     icon: exampleSvg,
   },
 };
+
+export const BarOrangeIcon: Story = {
+  args: {
+    text: 'Button',
+    style: 'bar-orange-icon',
+    icon: exampleSvg,
+  },
+};
+
+export const BarContrast: Story = {
+  args: {
+    text: 'Button',
+    style: 'bar-contrast',
+    icon: exampleSvg,
+  },
+};
+
+

@@ -115,7 +115,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         ref={ref}
         disabled={disabled}
       >
-        <Icon svg={icon} className="icon-button-icon"></Icon>
+        <Icon svg={icon || ""} className="icon-button-icon"></Icon>
       </button>
     );
   }
