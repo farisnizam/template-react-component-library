@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ESNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,   
-
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "strict": true,                          
     "skipLibCheck": true,
     "jsx": "react-jsx",
@@ -19,6 +19,7 @@
     "paths": {
       "@less/*": ["less/*"],
       "@modules/*": ["modules/*"],
+      "components/*": ["components/*"],
       "svgs/*": ["./src/modules/icons/svgs"],
       "patterns/*": ["./src/modules/icons/patterns"]
     },

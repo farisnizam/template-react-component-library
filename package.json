@@ -1,8 +1,9 @@
 {
   "name": "@farisnizam/template-react-component-library",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "A react component library",
   "scripts": {
+    "dev": "vite",
     "rollup": "rollup -c",
     "test": "jest",
     "sb": "storybook dev -p 6006",
@@ -65,5 +66,8 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/farisnizam"
+  },
+  "dependencies": {
+    "react-dom": "^18.3.1"
   }
 }

@@ -13,6 +13,7 @@ export default defineConfig({
     alias: {
       "@less": path.resolve(__dirname, "./src/less"),
       "@modules": path.resolve(__dirname, "./src/modules"),
+      "components": path.resolve(__dirname, "./src/components"),
       "svgs": path.resolve(__dirname, "./src/modules/icons/svgs"),
       "patterns": path.resolve(__dirname, "./src/modules/icons/patterns"),
     },
@@ -33,4 +34,8 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["@storybook/addon-docs"],
   },
+  server: {
+    open: true,
+    port: 3001,
+  }
 });
