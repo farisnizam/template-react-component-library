@@ -18,7 +18,9 @@
     "baseUrl": "./src",
     "paths": {
       "@less/*": ["less/*"],
-      "@modules/*": ["modules/*"]
+      "@modules/*": ["modules/*"],
+      "svgs/*": ["./src/modules/icons/svgs"],
+      "patterns/*": ["./src/modules/icons/patterns"]
     },
     
     "allowJs": true,
